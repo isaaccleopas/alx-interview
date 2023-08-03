@@ -4,16 +4,14 @@
 
 def canUnlockAll(boxes):
     """Returns True if all boxes can be visited, otherwise False."""
-    n = len(boxes)
-    visited = [False] * n
-    stack = [0]
+    if not boxes or type(boxes) is not list:
+        return False
 
-    while stack:
-        box = stack.pop()
-        visited[box] = True
-
-        for key in boxes[box]:
-            if not visited[key]:
-                stack.append(key)
-
-    return all(visited)
+    unlocked = [0]
+    for n in unlocked:
+        for key in boxes[n]:
+            if key not in unlocked and key < len(boxes):
+                unlocked.append(key)
+    if len(unlocked) == len(boxes):
+        return True
+    return False
