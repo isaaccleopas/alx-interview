@@ -13,7 +13,7 @@ cache = {
     '405': 0,
     '500': 0
 }
- 
+
 total_size = 0
 counter = 0
 
